@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="todo-head">
+            <h1>Todo List App</h1>
+            <div class="group">
+                <input type="text" placeholder="Add todo..." id="task-input">
+                <i class="addBtn fa-solid fa-plus" id="addBtn"></i>
+                <i class="addBtn fa-solid fa-check" id="addBtn"></i>
+            </div>
+        </div>
+
+        <div class="operators">
+            <div class="filters">
+                <button class="filter-todos allBtn active" data-filter="all">All</button>
+                <button class="filter-todos pendingBtn" data-filter="pending">Pending</button>
+                <button class="filter-todos completedBtn" data-filter="completed">Completed</button>
+            </div>
+            <button class="deleteAllBtn" id="deleteAllBtn">Delete All</button>
+        </div>
+
+        <div id="alert-message"></div>
+
+        <ul class="todoList"></ul>
+    </div>
+
+
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

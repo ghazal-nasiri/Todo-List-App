@@ -1,0 +1,264 @@
+@font-face {
+    font-family: "Kreon";
+    src: url(../font/Kreon.eot);
+    src: url(../font/Kreon.woff2) format("woff2"),
+        url(../font/Kreon.woff) format("woff"),
+        url(../font/Kreon.ttf) format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kreon", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: 50px auto 0;
+    max-width: 600px;
+}
+
+.container h1 {
+    text-align: center;
+    margin: 30px;
+    color: #ff7417;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 35px;
+    border: 3px solid #000;
+    padding: 2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px, rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 0px 4px 8px, rgba(0, 0, 0, 0.1) 0px 8px 16px, rgba(0, 0, 0, 0.1) 0px 16px 32px, rgba(0, 0, 0, 0.1) 0px 32px 64px;
+}
+
+.group input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 8px 12px;
+}
+
+.addBtn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: limegreen;
+    border-radius: 50%;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.fa-check {
+    display: none;
+}
+
+.addBtn:hover {
+    font-size: 28px;
+}
+
+.operators {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 50px;
+}
+
+.deleteAllBtn {
+    color: #ff7417;
+    border: 2px solid #ff7417;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all .3s;
+    background-color: transparent;
+}
+
+.deleteAllBtn:hover {
+    box-shadow: 0px 0px 10px 0px rgba(255, 116, 23, 0.7);
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.filters button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 4px;
+    position: relative;
+    font-size: 17px;
+    color: #fff;
+}
+
+.filters button::after {
+    content: "";
+    margin: auto;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    transition: all .2s;
+}
+
+.filters button.active::after {
+    background-color: limegreen;
+}
+
+.filters button:hover::after {
+    width: 100%;
+}
+
+.filters button.active {
+    color: limegreen;
+}
+
+#alert-message {
+    text-align: center;
+    height: 25px;
+    font-size: 18px;
+}
+
+.alert-success {
+    color: limegreen;
+}
+
+.alert-error {
+    color: rgb(255, 64, 64);
+}
+
+.todoList li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    background-color: #fa771f;
+    border-radius: 30px;
+    padding: 9px 20px 9px 35px;
+    font-weight: bold;
+    border: 3px solid #000;
+    position: relative;
+    margin: 12px 0;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 15px;
+    z-index: 3;
+}
+
+.todoList p {
+    max-width: 80%;
+}
+
+.todoList li .circle {
+    position: absolute;
+    left: 16px;
+    bottom: 50%;
+    transform: translateY(50%);
+    border: 2px solid;
+    border-color: #000;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    z-index: 2;
+}
+
+.trans {
+    border-color: transparent;
+}
+
+.fa-ellipsis {
+    z-index: 10;
+}
+
+.todoList li:hover {
+    background-color: #eb5e00;
+}
+
+.todoList>p {
+    text-align: center;
+    margin: 20px;
+    color: #fff;
+}
+
+.tick {
+    display: none;
+}
+
+.done .tick {
+    width: 10px;
+    height: 20px;
+    transform: rotate(-40deg);
+    border: 3px solid lime;
+    border-top: none;
+    border-right: none;
+    position: absolute;
+    left: 15px;
+    bottom: 17px;
+    display: block;
+    z-index: 3;
+}
+
+.done p {
+    text-decoration: line-through;
+}
+
+.todoList i {
+    margin-left: 7px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .1s;
+    z-index: 5;
+}
+
+.todoList i.fa-angle-right {
+    font-size: 15px;
+}
+
+.todoList i:hover {
+    transform: scale(1.1);
+    color: rgb(226, 226, 226);
+}
+
+i.fa-angle-right:hover {
+    transform: scale(1);
+}
+
+.todoList .fa-xmark {
+    font-size: 20px;
+}
+
+@media screen and (min-width: 1500px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .container {
+        max-width: 1000px;
+    }
+}
